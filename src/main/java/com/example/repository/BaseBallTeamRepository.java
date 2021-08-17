@@ -18,7 +18,7 @@ import com.example.domain.BaseballTeam;
  *
  */
 @Repository
-public class BaseBallTeamRepository {
+public class BaseballTeamRepository {
 	
 	@Autowired
 	private NamedParameterJdbcTemplate template;
@@ -44,7 +44,7 @@ public class BaseBallTeamRepository {
 	 * 
 	 * @return 野球チーム一覧情報
 	 */
-	private List<BaseballTeam> findAll(){
+	public List<BaseballTeam> findAll(){
 		
 		String sql = "SELECT id, league_name, team_name, headquarters, inauguration, history FROM teams ORDER BY inauguration ASC;";
 		
@@ -60,7 +60,7 @@ public class BaseBallTeamRepository {
 	 * @param id ID
 	 * @return　主キー対応の野球チーム情報
 	 */
-	private BaseballTeam load(Integer id) {
+	public BaseballTeam load(Integer id) {
 		
 		String sql = "SELECT id, league_name, team_name, headquarters, inauguration, history FROM teams WHERE id=:id ;";
 		
