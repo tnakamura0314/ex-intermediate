@@ -8,6 +8,9 @@ package com.example.domain;
  */
 public class BaseballTeam {
 
+	/** ID */
+	private Integer id;
+
 	/** リーグ名 */
 	private String leagueName;
 
@@ -22,6 +25,14 @@ public class BaseballTeam {
 
 	/** 歴史 */
 	private String history;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getLeagueName() {
 		return leagueName;
@@ -65,8 +76,8 @@ public class BaseballTeam {
 
 	@Override
 	public String toString() {
-		return "BaseballTeam [leagueName=" + leagueName + ", teamName=" + teamName + ", headquarters=" + headquarters
-				+ ", inauguration=" + inauguration + ", history=" + history + "]";
+		return "BaseballTeam [id=" + id + ", leagueName=" + leagueName + ", teamName=" + teamName + ", headquarters="
+				+ headquarters + ", inauguration=" + inauguration + ", history=" + history + "]";
 	}
 
 }
