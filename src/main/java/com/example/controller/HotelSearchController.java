@@ -13,6 +13,12 @@ import com.example.domain.HotelSearch;
 import com.example.form.HotelSearchForm;
 import com.example.service.HotelSearchService;
 
+/**
+ * ホテルの情報を操作するコントローラー.
+ * 
+ * @author nakamuratomoya
+ *
+ */
 @Controller
 @RequestMapping("/hotelSearch")
 public class HotelSearchController {
@@ -30,6 +36,14 @@ public class HotelSearchController {
 		return "hotel-search";
 	}
 	
+	/**
+	 * 指定価格から該当のホテル情報を取得する.
+	 * 
+	 * @param price 価格
+	 * @param hotelSearchForm　フォームクラス
+	 * @param model　requestスコープ
+	 * @return　該当のホテル情報
+	 */
 	@RequestMapping("/searchByLessThanPrice")
 	public String searchByLessThanPrice(Integer price, HotelSearchForm hotelSearchForm, Model model){
 		
