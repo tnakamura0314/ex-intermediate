@@ -59,5 +59,19 @@ public class HotelSearchRepository {
 		
 		return hotelSearchList;
 	}
+	
+	/**
+	 * ホテルを全件検索する.
+	 * 
+	 * @return 全件のホテル
+	 */
+	public List<HotelSearch> findAll(){
+		
+		String sql = "SELECT id, area_name, hotel_name, address, nearest_station, price, parking FROM hotels ;";
+		
+		List<HotelSearch> hotelSearchList = template.query(sql, HOTEL_SEARCH_ROW_MAPPER);
+		
+		return hotelSearchList;
+	}
 
 }

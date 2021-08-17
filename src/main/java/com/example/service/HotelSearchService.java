@@ -16,18 +16,22 @@ import com.example.repository.HotelSearchRepository;
  */
 @Service
 public class HotelSearchService {
-	
+
 	@Autowired
 	private HotelSearchRepository repository;
-	
+
 	/**
 	 * 指定価格から該当のホテル情報を取得する.
 	 * 
 	 * @param price 価格
-	 * @return　該当のホテル情報
+	 * @return 該当のホテル情報
 	 */
-	public List<HotelSearch> searchByLessThanPrice(Integer price){
+	public List<HotelSearch> searchByLessThanPrice(Integer price) {
+
+		if (price == null) {
+			return repository.findAll();
+		}
+
 		return repository.findByPrice(price);
 	}
-
 }
