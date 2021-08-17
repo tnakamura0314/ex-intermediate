@@ -19,7 +19,7 @@ public class BaseballTeamService {
 	
 	@Autowired
 	private BaseballTeamRepository repository;
-	
+		
 	/**
 	 * 野球チーム一覧情報を取得.
 	 * 

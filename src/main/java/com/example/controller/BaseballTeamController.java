@@ -23,7 +23,6 @@ public class BaseballTeamController {
 	@Autowired
 	private BaseballTeamService service;
 	
-	
 	/**
 	 * 野球チーム一覧情報を取得する.
 	 * 
@@ -32,31 +31,31 @@ public class BaseballTeamController {
 	 */
 	@RequestMapping("/showList")
 	public String showList(Model model) {
-		
+
 		List<BaseballTeam> baseballTeamList = service.shwoList();
-		
+
 		model.addAttribute("baseballTeamList", baseballTeamList);
-		
-		return "/baseballTeam/showList";
-		
+
+		return "show-list";
+
 	}
-	
+
 	/**
 	 * 野球チーム詳細情報を取得する.
 	 * 
-	 * @param id　ID
-	 * @param model　requestスコープ
+	 * @param id    ID
+	 * @param model requestスコープ
 	 * @return 野球チーム詳細情報
 	 */
 	@RequestMapping("/showDetail")
 	public String showDetail(Integer id, Model model) {
-		
+
 		BaseballTeam baseballTeam = service.showDetail(id);
-		
+
 		model.addAttribute("baseballTeam", baseballTeam);
-		
-		return "/baseballTeam/showDetail";
-		
+
+		return "show-detail";
+
 	}
 
 }
