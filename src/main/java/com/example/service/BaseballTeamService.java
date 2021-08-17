@@ -8,17 +8,34 @@ import org.springframework.stereotype.Service;
 import com.example.domain.BaseballTeam;
 import com.example.repository.BaseballTeamRepository;
 
+/**
+ * 野球チーム情報を操作するサービスクラス.
+ * 
+ * @author nakamuratomoya
+ *
+ */
 @Service
 public class BaseballTeamService {
 	
 	@Autowired
 	private BaseballTeamRepository repository;
 	
-	public List<BaseballTeam> findAll(){
+	/**
+	 * 野球チーム一覧情報を取得.
+	 * 
+	 * @return　野球チーム一覧情報
+	 */
+	public List<BaseballTeam> shwoList(){
 		return repository.findAll();
 	}
 	
-	public BaseballTeam load(Integer id) {
+	/**
+	 * 野球チーム詳細情報を取得
+	 * 
+	 * @param id　ID 
+	 * @return　野球チーム詳細情報
+	 */
+	public BaseballTeam showDetail(Integer id) {
 		return repository.load(id);
 	}
 
